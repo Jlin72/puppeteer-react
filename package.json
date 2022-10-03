@@ -28,6 +28,7 @@
     "dart-sass": "^1.25.0",
     "nodemon": "^2.0.20",
     "sass": "^1.55.0",
-    "style-loader": "^3.3.1"
+    "style-loader": "^3.3.1",
+    "webpack-dev-server": "^4.11.1"
   }
 }

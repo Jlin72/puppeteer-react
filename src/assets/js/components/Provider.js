@@ -1,10 +1,9 @@
 import React from "react";
 import { useState, createContext } from "react";
-import Announcer from "./Announcer";
 
 export const searchBarContext = createContext();
 
-export default function provider(props) {
+export default function Provider(props) {
 	const contextInformation = {
 		searchTerm: "",
 
