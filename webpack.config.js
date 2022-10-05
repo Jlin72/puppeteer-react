@@ -13,7 +13,9 @@ module.exports = {
         compress:true,
         hot:true,
         liveReload:true,
-        static: path.join(__dirname, 'src')
+        static: {
+            directory: path.resolve(__dirname, 'src')
+        },
     },
     module: {
         rules: [

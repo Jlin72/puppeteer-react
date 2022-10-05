@@ -19,7 +19,7 @@ const SearchBar = (props) => {
     return(
         <>
             <form onSubmit={(e) => {e.stopPropagation()}}>
-                <input {...inputFunctions} placeholder="Enter search value" ref={inputRef} />
+                <input {...inputFunctions} placeholder="Enter searchaaa lol value" ref={inputRef} />
             </form>
         </>
     )

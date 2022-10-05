@@ -3,7 +3,7 @@ import something from '../data.json';
 import { searchBarContext } from './Provider';
 
 const Content = (props) => {
-    const data = something.bat4m;
+    const data = something;
     const [resultsFound, setResultsFound] = useState(false);
     const [resultsArr, setResultsArr] = useState([]);
     const context = useContext(searchBarContext);
@@ -12,7 +12,7 @@ const Content = (props) => {
     }, [context])
     return(
         <div>
-            {console.log(context.searchTerm)}
+            {/* {console.log(context.searchTerm)}
             <p>{context.searchTerm}</p>
             {Object.keys(data).map((value, index) => {
                 return data[value].map((e, i) => {
@@ -30,9 +30,24 @@ const Content = (props) => {
                         )
                     }
                 })
-            })}
+            })} */}
             {(resultsFound === false) ? <p>No results found</p> : ""}
-            <p>Something</p>
+            {(!context.searchTerm) ? (
+                <p>Press on the search bar to start</p>
+            ): (
+                data.map((element, index) => {
+                    return element.content.map((items, i) => {
+                        if(items.includes(context.searchTerm)) {
+                            return (
+                                <>
+                                    <p dangerouslySetInnerHTML={{__html: items}} />
+                                    <hr />
+                                </>
+                            )
+                        }
+                    })
+                })
+            )}
         </div>
     )
 }
